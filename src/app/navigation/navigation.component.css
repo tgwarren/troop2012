@@ -1,0 +1,44 @@
+nav{
+    display: flex;
+    margin-left: 200px;
+    align-items: center;
+    font-family: 'Indie Flower', cursive;
+  
+  }
+  
+  .button {
+      display: inline-block;
+      cursor: pointer;
+      color: hsl(123, 100%, 18%);
+      font-size: 25px;
+      font-weight: bold;
+      padding: 6px 24px;
+      text-decoration-color: hsl(53, 81%, 96%);
+      text-shadow: 0 1px 0 	hsl(105, 100%, 87%);
+      outline: 0;
+      margin: 12px;
+  }
+  
+  .activebutton {
+      display: inline-block;
+      cursor: pointer;
+      color: 	hsl(123, 100%, 18%);
+      font-size: 25px;
+      font-weight: bold;
+      padding: 6px 24px;
+      text-decoration-color: hsl(328, 98%, 75%);
+      text-shadow: 0 1px 0 hsl(105, 100%, 87%);
+      outline: 0;
+      margin: 12px;
+      border-radius: 25px;
+  }
+  
+  @media screen and (max-width: 800px) {
+    nav{
+      margin-left: 0px;
+    }
+    .button {
+      font-size: 20px;
+      padding: 6px 12px;
+    }
+  }

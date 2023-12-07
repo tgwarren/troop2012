@@ -1,0 +1,11 @@
+<main>
+  <full-calendar [options]="calendarOptions"></full-calendar>
+
+    
+    <ul>
+      <h3>Upcoming Events</h3>
+      <li *ngFor="let event of events">
+        <app-event-listing [date]="event.date" [plan]="event.plan"></app-event-listing>
+      </li>
+    </ul>
+  </main>

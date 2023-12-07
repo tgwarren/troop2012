@@ -1,0 +1,6 @@
+<form #removeMemberForm="ngForm" class="member-form" (ngSubmit)="deleteMember(removeMemberForm.value)">
+    <label for="id">Id:</label>
+    <input type="text" id="id" name="id" ngModel>
+  
+    <input class="button" type="submit" value="Remove Member">
+  </form>

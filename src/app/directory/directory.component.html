@@ -1,0 +1,27 @@
+<main>
+    <h3>Troop Directory</h3>
+    <div class="header">
+          <p class="id">Id</p>
+          <p class="parent">Parent Name</p>
+          <p class="daughter">Daughter Name</p>
+          <p class="address">Address</p>
+          <p class="email">Email</p>
+          <p class="phone">Phone Number</p>
+      </div>
+      <div>
+        <app-member-listing *ngFor="let member of getMembers()"
+          [id]="member.id"
+          [parentName]="member.parentName"
+          [daughterName]="member.daughterName"
+          [address]="member.address"
+          [email]="member.email"
+          [phoneNumber]= "member.phoneNumber"
+          ></app-member-listing>
+      </div>
+  </main>
+  
+  <app-form-links></app-form-links>
+  <router-outlet></router-outlet>
+  
+  <!--Back to top button-->
+  <a href="directory" class="top">Back to Top &#8593;</a>

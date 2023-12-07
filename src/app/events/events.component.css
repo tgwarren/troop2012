@@ -1,0 +1,21 @@
+main{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 25px;
+    margin: 5%;
+  }
+  
+    
+  h3{
+    font-family: 'Indie Flower', cursive;
+    font-size: 28px;
+    margin-top: -24px;
+  }
+  
+  @media screen and (max-width: 800px) {
+    main{
+      padding: 0px;
+    }
+  
+  }

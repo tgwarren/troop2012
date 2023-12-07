@@ -1,0 +1,55 @@
+main{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .join{
+    order: 4;
+    width: 50%;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  #donate {
+    order: 4;
+    width: 50%;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+  
+  }
+  
+  .button{
+    color: hsl(123, 100%, 18%);
+    text-decoration-color:hsl(328, 98%, 75%);;
+    }
+  
+  .girls{
+    width: 50%;
+    border-radius: 25px;
+  }
+  
+  .about{
+    order: 3;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 800px) {
+    img{
+      width: 100%;
+    }
+    .join{
+      width: 80%;
+      font-size: 1.5rem;
+    }
+    #donate{
+      font-size: 1.5rem;
+    }
+    .about{
+      font-size: 1.5rem;
+    }
+  }

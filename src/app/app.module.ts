@@ -16,6 +16,10 @@ import { FormLinksComponent } from './form-links/form-links.component';
 import { EditMemberComponent } from './edit-member/edit-member.component';
 import { RemoveMemberComponent } from './remove-member/remove-member.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { SalesComponent } from './sales/sales.component';
+import { CookiesComponent } from './cookies/cookies.component';
+import { FallProductsComponent } from './fall-products/fall-products.component';
+import { PhotosComponent } from './photos/photos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,11 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     FormLinksComponent,
     ArrayOfComponents,
     EditMemberComponent,
-    RemoveMemberComponent
+    RemoveMemberComponent,
+    SalesComponent,
+    CookiesComponent,
+    FallProductsComponent,
+    PhotosComponent
   ],
   imports: [
     BrowserModule,

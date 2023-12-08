@@ -32,6 +32,39 @@ nav{
       margin: 12px;
       border-radius: 25px;
   }
+
+  .subnav {
+    float: left;
+    overflow: hidden;
+  }
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 50;
+  background-color: hsl(53, 81%, 96%);
+  width: 100%;
+  z-index: 1;
+}
+
+/* Style the subnav links */
+.subnav-content a {
+  float: center;
+  color: hsl(123, 100%, 18%);
+  text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+  background-color:hsl(123, 22%, 48%);
+  color: hsl(53, 81%, 96%);
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+  display: block;
+}
   
   @media screen and (max-width: 800px) {
     nav{

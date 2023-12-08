@@ -7,6 +7,9 @@ import { EventsComponent } from './events/events.component';
 import { MemberFormComponent } from './member-form/member-form.component';
 import { EditMemberComponent } from './edit-member/edit-member.component';
 import { RemoveMemberComponent } from './remove-member/remove-member.component';
+import { SalesComponent } from './sales/sales.component';
+import { CookiesComponent } from './cookies/cookies.component';
+import { FallProductsComponent } from './fall-products/fall-products.component';
 
 const routes: Routes = [
   { path: 'home-page', component: HomePageComponent },
@@ -18,6 +21,12 @@ const routes: Routes = [
     ]
   },
   { path: 'events', component: EventsComponent },
+  { path: 'sales', component: SalesComponent,
+      children: [
+      { path: 'cookies', component: CookiesComponent },
+      { path: 'fall-products', component: FallProductsComponent },
+    ]
+  },
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

@@ -41,17 +41,18 @@ export class MemberService {
   // Update Member
   updateMember(member: Member): Observable<Member> {
     console.log('Sending update request from member: ', member);
-    return this.http.put<Member>(`${this.apiUrl}`, {
-      body: {
-        id: member._id,
-        parentName: member.parentName,
-        daughterName: member.daughterName,
-        address: member.address,
-        email: member.email,
-        phoneNumber: member.phoneNumber,
-      },
-    });
+    const updateMember = {
+      id: member._id,
+      parentName: member.parentName,
+      daughterName: member.daughterName,
+      address: member.address,
+      email: member.email,
+      phoneNumber: member.phoneNumber,
+    };
+    console.log(updateMember);
+    return this.http.put<Member>(`${this.apiUrl}`, updateMember);
   }
+
   // Delete Member
   deleteMember(id: string): Observable<any> {
     return this.http.request('delete', `${this.apiUrl}`, {body: {id: id}});

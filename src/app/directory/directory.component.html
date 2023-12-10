@@ -126,6 +126,7 @@
             class="btn btn-primary"
             (click)="updateMember()"
             [disabled]="editForm.invalid"
+            data-bs-dismiss="modal"
           >
             Update Member
           </button>
@@ -134,14 +135,6 @@
     </div>
   </div>
 
-  <script>
-    const myModal = document.getElementById("myModal");
-    const myInput = document.getElementById("myInput");
-
-    myModal.addEventListener("shown.bs.modal", () => {
-      myInput.focus();
-    });
-  </script>
 
   <!--Back to top button-->
   <a href="directory" class="top">Back to Top &#8593;</a>

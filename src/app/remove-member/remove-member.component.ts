@@ -12,12 +12,31 @@ import { Member } from '../models/Member';
 `
 })
 export class RemoveMemberComponent  {
+  members: Member[] = [];
+  member: any = {
+    _id: '',
+    parentName: '',
+    daughterName: '',
+    address: '',
+    email: '',
+    phoneNumber: '',
+  };
 
   constructor(private memberService: MemberService) { }
 
+  //Updated Data
+  loadMembers() {
+    this.memberService.getMembers().subscribe((data: any) => {
+      this.members = data;
+    });
+  }
+
 @ViewChild('removeMemberForm') removeMemberForm: any;
-  deleteMember(deleteMember: Member) {
-    this.memberService.deleteMember(deleteMember);
-    this.removeMemberForm.reset();
+  //Delete Member
+  deleteMember(id: string){
+    this.memberService.deleteMember(id).subscribe((response) =>{
+      console.log('Member deleted: ', response);
+      this.loadMembers();
+    })
   }
 }

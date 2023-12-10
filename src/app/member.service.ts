@@ -1,53 +1,59 @@
 import { Injectable } from '@angular/core';
 import { Member } from './models/Member';
 import { HttpClient } from '@angular/common/http';
-import {environment} from './../environments/environment';
+import { Observable } from 'rxjs';
 
 
-type MembersResponse = {
-  members: Member[];
-}
-type MemberResponse = {
-  member: Member;
-}
 
-const membersEndPoint = `${environment.baseApiUrl}/api/members`;
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MemberService {
-  members: Member[] = []
+  
+  private apiUrl = 'http://localhost:3000/members'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-
-  fetchMembers() {
-    return this.http.get<MembersResponse>(membersEndPoint).subscribe(response => {
-      this.members = response.members
-    })
+  // Get Members
+  getMembers(): Observable<Member[]> {
+    return this.http.get<Member[]>(`${this.apiUrl}`);
+  }
+  // Get Member
+  getMember(id: string): Observable<Member> {
+    return this.http.get<Member>(`${this.apiUrl}/${id}`);
   }
 
-  addMember(member: Member) {
-    return this.http.post<MemberResponse>(membersEndPoint, member).subscribe(response => {
-      this.members = [...this.members, response.member]
-    })
+  // Create New Member
+  createNewMember(member:Member):Observable<Member> {
+    console.log('Sending new information request from member: ', member);
+    return this.http.post<Member>(`${this.apiUrl}`, {
+      body: {
+        id: member._id,
+        parentName: member.parentName,
+        daughterName: member.daughterName,
+        address: member.address,
+        email: member.email,
+        phoneNumber: member.phoneNumber,
+      },
+    });
   }
 
-  getMemberById(id: number) {
-    return this.http.get<Member>(`${environment.baseApiUrl}/api/members/${id}`)
+  // Update Member
+  updateMember(member: Member): Observable<Member> {
+    console.log('Sending update request from member: ', member);
+    return this.http.put<Member>(`${this.apiUrl}`, {
+      body: {
+        id: member._id,
+        parentName: member.parentName,
+        daughterName: member.daughterName,
+        address: member.address,
+        email: member.email,
+        phoneNumber: member.phoneNumber,
+      },
+    });
   }
-
-  updateMember(member: Member) {
-    return this.http.put<MemberResponse>(`${membersEndPoint}/${member.id}`, member).subscribe(response => {
-      this.members = [...this.members, response.member]
-    })
-
-  }
-
-  deleteMember(member: Member) {
-    return this.http.delete<MemberResponse>(`${membersEndPoint}/${member.id}`).subscribe(() => {
-      this.members = this.members.filter(m => +m.id !== +member.id)
-
-    })
+  // Delete Member
+  deleteMember(id: string): Observable<any> {
+    return this.http.request('delete', `${this.apiUrl}`, {body: {id: id}});
   }
 }

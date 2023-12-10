@@ -1,31 +1,75 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../member.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Member } from '../models/Member';
+import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-directory',
   templateUrl: './directory.component.html',
-  styleUrls: ['./directory.component.css']
+  styleUrls: ['./directory.component.css'],
 })
-
 export class DirectoryComponent implements OnInit {
+  faPenToSquare = faPenToSquare;
+  faTrash = faTrash;
 
-  constructor(private memberService: MemberService, private route: ActivatedRoute, private router: Router ) { }
+  members: Member[] = [];
+  member: any = {
+    _id: '',
+    parentName: '',
+    daughterName: '',
+    address: '',
+    email: '',
+    phoneNumber:'',
+  };
+
+  constructor(private memberService: MemberService) {}
 
   ngOnInit(): void {
-    this.memberService.fetchMembers()
+    this.memberService.getMembers().subscribe((data: any) => {
+      this.members = data as Member[];
+    });
   }
 
-  getMembers() {
-    return this.memberService.members;
+  //Updated Data
+  loadMembers() {
+    this.memberService.getMembers().subscribe((data: any) => {
+      this.members = data;
+    });
   }
 
-  addMemeber() {
-    this.router.navigate(['/member-form']), { relativeTo: this.route }
+  // Get Member
+  getMember(id: string) {
+    if (id) {
+      this.memberService.getMember(id).subscribe((memberData) => {
+        this.member = memberData;
+        console.log(memberData);
+      });
+    } else {
+      console.log('Member Id is undefined');
+    }
   }
-  editMember() {
-    this.router.navigate(['/edit-member']), { relativeTo: this.route }
+
+  //Update Member
+  updateMember() {
+    if (this.member._id && this.member) {
+      this.memberService.updateMember(this.member).subscribe({
+        next: (updateMember) => {
+          console.log('Member successfully update: ', updateMember);
+          this.loadMembers();
+        },
+        error: (error) => {
+          console.error('Error updating member: ', error);
+        }
+      });
+    }else {
+      console.log('Member ID is undefined.')
+    }
   }
-  removeMember() {
-    this.router.navigate(['/remove-member']), { relativeTo: this.route }
+
+  //Delete Member
+  deleteMember(id: string){
+    this.memberService.deleteMember(id).subscribe((response) =>{
+      console.log('Member deleted: ', response);
+      this.loadMembers();
+    })
   }
 }

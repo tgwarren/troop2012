@@ -20,6 +20,7 @@ import { SalesComponent } from './sales/sales.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { FallProductsComponent } from './fall-products/fall-products.component';
 import { PhotosComponent } from './photos/photos.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { PhotosComponent } from './photos/photos.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    FullCalendarModule
+    FullCalendarModule,
+    FontAwesomeModule
   ],
 
   providers: [],

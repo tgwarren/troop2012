@@ -5,8 +5,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { EventsComponent } from './events/events.component';
 import { MemberFormComponent } from './member-form/member-form.component';
-import { EditMemberComponent } from './edit-member/edit-member.component';
-import { RemoveMemberComponent } from './remove-member/remove-member.component';
 import { SalesComponent } from './sales/sales.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { FallProductsComponent } from './fall-products/fall-products.component';
@@ -16,8 +14,6 @@ const routes: Routes = [
   { path: 'directory', component: DirectoryComponent,
       children: [
       { path: 'member-form', component: MemberFormComponent },
-      { path: 'edit-member', component: EditMemberComponent },
-      { path: 'remove-member', component: RemoveMemberComponent },
     ]
   },
   { path: 'events', component: EventsComponent },
@@ -41,4 +37,4 @@ const formRoutes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const ArrayOfComponents = [DirectoryComponent, MemberFormComponent, EditMemberComponent, RemoveMemberComponent];
+export const ArrayOfComponents = [DirectoryComponent, MemberFormComponent];

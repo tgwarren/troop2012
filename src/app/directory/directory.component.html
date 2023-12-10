@@ -31,7 +31,7 @@
     </tbody>
   </table>
 </div>
-<!-- Modal -->
+<!-- Update Modal -->
 <div
   class="modal fade"
   id="myModal"
@@ -134,8 +134,72 @@
       </div>
     </div>
   </div>
+</div>
+<a class="addButton" data-bs-toggle="modal" data-bs-target="#addModal"> Add Member</a>
+<!-- Add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addModalLabel">Add New Member</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm">
+          <label for="parentName">Parent Name:</label>
+          <input type="text"
+          class="form-control"
+          id="parentName"
+          [(ngModel)]="member.parentName"
+          name="parentName"
+          #parentname="ngModel">
+        
+          <label for="daughterName">Daughter Name:</label>
+          <input type="text"
+          class="form-control"
+          id="daughterName"
+          [(ngModel)]="member.daughterName"
+          name="daughterName"
+          #daughtername="ngModel">
+        
+          <label for="address">Address:</label>
+          <input type="text"
+          class="form-control"
+          id="address"
+          [(ngModel)]="member.address"
+          name="address">
+        
+          <label for="email">Email:</label>
+          <input type="text"
+          class="form-control"
+          id="email"
+          [(ngModel)]="member.email"
+          name="email">
+        
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="text"
+          class="form-control"
+          id="phoneNumber"
+          [(ngModel)]="member.phoneNumber"
+          name="phoneNumber">
+        
+          <button
+            type="submit"
+            class="btn btn-primary"
+            (click)="createNewMember()"
+            [disabled]="addForm.invalid"
+            data-bs-dismiss="modal"
+          >
+            Add New Member
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+  
+ 
   <!--Back to top button-->
   <a href="directory" class="top">Back to Top &#8593;</a>
-</div>

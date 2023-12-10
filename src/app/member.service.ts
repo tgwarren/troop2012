@@ -24,18 +24,17 @@ export class MemberService {
   }
 
   // Create New Member
-  createNewMember(member:Member):Observable<Member> {
+  createNewMember(member: Member): Observable<Member> {
     console.log('Sending new information request from member: ', member);
-    return this.http.post<Member>(`${this.apiUrl}`, {
-      body: {
-        id: member._id,
-        parentName: member.parentName,
-        daughterName: member.daughterName,
-        address: member.address,
-        email: member.email,
-        phoneNumber: member.phoneNumber,
-      },
-    });
+    const newMember = {
+      parentName: member.parentName,
+      daughterName: member.daughterName,
+      address: member.address,
+      email: member.email,
+      phoneNumber: member.phoneNumber,
+    };
+    console.log(newMember);
+    return this.http.post<Member>(`${this.apiUrl}`, newMember);
   }
 
   // Update Member

@@ -47,6 +47,18 @@ export class DirectoryComponent implements OnInit {
       console.log('Member Id is undefined');
     }
   }
+    //Create New Member
+    createNewMember() {
+      this.memberService.createNewMember(this.member).subscribe({
+        next: (createNewMember) => {
+          console.log('Member added successfully: ', createNewMember);
+          this.loadMembers();
+        },
+        error: (error) => {
+          console.error('Error adding member: ', error);
+        },
+      });
+    }
 
   //Update Member
   updateMember() {
@@ -73,3 +85,4 @@ export class DirectoryComponent implements OnInit {
     })
   }
 }
+

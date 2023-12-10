@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    baseApiUrl: 'https://memberdirectory.netlify.app',
+    baseApiUrl: 'http://localhost:8080',
   };

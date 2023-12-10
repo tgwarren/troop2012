@@ -23,7 +23,7 @@
         <fa-icon
           [icon]="faPenToSquare"
           data-bs-toggle="modal"
-          data-bs-target="myModal"
+          data-bs-target="#myModal"
           (click)="getMember(member._id)"
         ></fa-icon>
         <fa-icon [icon]="faTrash" (click)="deleteMember(member._id)"></fa-icon>
@@ -31,28 +31,24 @@
     </tbody>
   </table>
 </div>
-
 <!-- Modal -->
 <div
   class="modal fade"
   id="myModal"
   tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
+  aria-labelledby="myModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Member</h1>
+        <h1 class="modal-title fs-5" id="myModalLabel">Update Member</h1>
         <button
           type="button"
           class="btn-close"
           data-bs-dismiss="modal"
           aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
+        ></button>
       </div>
       <div class="modal-body">
         <form #editForm="ngForm">
@@ -77,12 +73,6 @@
               name="parentName"
               #parentname="ngModel"
             />
-            <p
-              class="text-danger fw-bold"
-              *ngIf="parentname.touched && parentname.invalid"
-            >
-              Enter Parent Name
-            </p>
           </div>
           <div class="mb-3">
             <label for="daughterName" class="form-label">Daughter Name:</label>
@@ -143,7 +133,16 @@
       </div>
     </div>
   </div>
-</div>
 
-<!--Back to top button-->
- <a href="directory" class="top">Back to Top &#8593;</a> 
+  <script>
+    const myModal = document.getElementById("myModal");
+    const myInput = document.getElementById("myInput");
+
+    myModal.addEventListener("shown.bs.modal", () => {
+      myInput.focus();
+    });
+  </script>
+
+  <!--Back to top button-->
+  <a href="directory" class="top">Back to Top &#8593;</a>
+</div>

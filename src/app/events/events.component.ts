@@ -5,6 +5,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
+import { EventService } from '../event.service';
+import { Event } from '../models/Event';
 
 @Component({
   selector: 'app-events',
@@ -13,6 +15,14 @@ import { INITIAL_EVENTS, createEventId } from './event-utils';
 })
 
 export class EventsComponent {
+
+  events: Event[] = [];
+  event: any = {
+    _id: '',
+    title: '',
+    start: Date,
+    end: Date,
+  };
 
   calendarVisible = signal(true);
   calendarOptions = signal<CalendarOptions>({
@@ -45,7 +55,13 @@ export class EventsComponent {
   });
   currentEvents = signal<EventApi[]>([]);
 
-  constructor(private changeDetector: ChangeDetectorRef) {
+  constructor(private changeDetector: ChangeDetectorRef, private eventService: EventService) {
+  }
+
+  ngOnInit(): void {
+    this.eventService.getEvents().subscribe((data: any) => {
+      this.events = data as Event[];
+    });
   }
 
   handleCalendarToggle() {

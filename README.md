@@ -1,8 +1,9 @@
+# Troop2012
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/159b7775-f9ec-4a01-91ad-749356bad628/deploy-status)](https://app.netlify.com/sites/girlscouttroop2012/deploys)
 
-https://girlscouttroop2012.netlify.app
+[! [Troop2012](https://girlscouttroop2012.netlify.app)]
 
-# Troop2012
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
 

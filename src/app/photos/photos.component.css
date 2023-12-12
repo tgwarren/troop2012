@@ -1,0 +1,114 @@
+
+input {
+    display: none;
+  }
+  
+  .image-upload-container {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+  }
+
+  .btn-bwm {
+    background-color:hsl(53, 81%, 96%);
+    border-color: hsl(328, 98%, 15%);
+    color: hsl(123, 100%, 18%);
+    font-family: "Indie Flower", cursive;
+    font-weight: bolder;
+    padding: 15px 30px;
+    font-size: 20px;
+  }
+  
+  .btn-bwm:hover,
+  .btn-bwm:focus,
+  .btn-bwm:active {
+    border-color: hsl(328, 98%, 15%); 
+    background-color: hsl(53, 81%, 96%);
+  }
+  
+  
+  .img-preview-container {
+    background-color: #f7f7f7;
+    position: relative;
+  }
+  
+  .img-preview-container .img-preview {
+    background: center center no-repeat;
+    background-size: contain;
+    height: 116px;
+    width: 116px;
+  }
+  
+  .img-preview-container .img-preview-error {
+    display: none;
+  }
+  
+  .img-loading-overlay {
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    opacity: .2;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .img-spinning-circle {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .img-spinning-circle:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+
+/* original css */
+
+h2{
+    padding-top: 5rem;
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    text-align: center;
+  }
+  
+  P{
+    padding-top: 5rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 800px) {
+    h2{
+      font-size: 1rem;
+    }
+    P{
+      font-size: 1rem;
+    }
+  }

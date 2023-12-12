@@ -16,6 +16,9 @@ import { CookiesComponent } from './cookies/cookies.component';
 import { FallProductsComponent } from './fall-products/fall-products.component';
 import { PhotosComponent } from './photos/photos.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     ReactiveFormsModule,
     FullCalendarModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CommonModule,
+    RouterOutlet,
   ],
 
   providers: [],

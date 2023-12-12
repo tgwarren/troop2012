@@ -7,6 +7,7 @@ import { EventsComponent } from './events/events.component';
 import { SalesComponent } from './sales/sales.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { FallProductsComponent } from './fall-products/fall-products.component';
+import { PhotosComponent } from './photos/photos.component';
 
 const routes: Routes = [
   { path: 'home-page', component: HomePageComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'fall-products', component: FallProductsComponent },
     ]
   },
+  { path: 'photos', component: PhotosComponent },
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

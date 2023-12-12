@@ -18,7 +18,7 @@ export class DirectoryComponent implements OnInit {
     daughterName: '',
     address: '',
     email: '',
-    phoneNumber:'',
+    phoneNumber: '',
   };
 
   constructor(private memberService: MemberService) {}
@@ -47,18 +47,18 @@ export class DirectoryComponent implements OnInit {
       console.log('Member Id is undefined');
     }
   }
-    //Create New Member
-    createNewMember() {
-      this.memberService.createNewMember(this.member).subscribe({
-        next: (createNewMember) => {
-          console.log('Member added successfully: ', createNewMember);
-          this.loadMembers();
-        },
-        error: (error) => {
-          console.error('Error adding member: ', error);
-        },
-      });
-    }
+  //Create New Member
+  createNewMember() {
+    this.memberService.createNewMember(this.member).subscribe({
+      next: (createNewMember) => {
+        console.log('Member added successfully: ', createNewMember);
+        this.loadMembers();
+      },
+      error: (error) => {
+        console.error('Error adding member: ', error);
+      },
+    });
+  }
 
   //Update Member
   updateMember() {
@@ -70,19 +70,18 @@ export class DirectoryComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error updating member: ', error);
-        }
+        },
       });
-    }else {
-      console.log('Member ID is undefined.')
+    } else {
+      console.log('Member ID is undefined.');
     }
   }
 
   //Delete Member
-  deleteMember(id: string){
-    this.memberService.deleteMember(id).subscribe((response) =>{
+  deleteMember(id: string) {
+    this.memberService.deleteMember(id).subscribe((response) => {
       console.log('Member deleted: ', response);
       this.loadMembers();
-    })
+    });
   }
 }
-

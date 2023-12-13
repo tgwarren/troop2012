@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class PhotosService {
 
+  private apiUrl = 'http://localhost:3000/upload'
+
   constructor(private http: HttpClient) {}
 
 
@@ -15,6 +17,6 @@ export class PhotosService {
 
     formData.append('image', image);
 
-    return this.http.post('/api/v1/image-upload', formData);
+    return this.http.post('/image', formData);
   }
 } 

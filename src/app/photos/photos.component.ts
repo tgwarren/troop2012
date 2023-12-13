@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PhotosService } from '../photos.service';
+import { PhotosService } from '../services/photos.service';
 
 class ImageSnippet {
   pending: boolean = false;

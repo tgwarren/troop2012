@@ -5,7 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
-import { EventService } from '../event.service';
+import { EventService } from '../services/event.service';
 import { Event } from '../models/Event';
 
 @Component({

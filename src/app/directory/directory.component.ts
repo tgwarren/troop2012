@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MemberService } from '../member.service';
+import { MemberService } from '../services/member.service';
 import { Member } from '../models/Member';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 @Component({

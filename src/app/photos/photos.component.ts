@@ -15,7 +15,17 @@ class ImageSnippet {
 export class PhotosComponent {
   selectedFile!: ImageSnippet;
 
+  file: File[] = [];
+
   constructor(private photosService: PhotosService){}
+
+  ngOnInit(): void {
+    this.photosService.getImages().subscribe((data: any) => {
+      this.file = data as File[];
+    });
+
+
+  }
 
   private onSuccess() {
     this.selectedFile.pending = false;

@@ -11,12 +11,17 @@ export class PhotosService {
 
   constructor(private http: HttpClient) {}
 
+  //  // Get Image
+   getImages(): Observable<File[]> {
+    return this.http.get<File[]>(`${this.apiUrl}`);
+  }
 
-  uploadImage(image: File): Observable<any> {
+  // Upload Image
+  public uploadImage(image: File): Observable<Response> {
     const formData = new FormData();
 
     formData.append('image', image);
 
-    return this.http.post('/image', formData);
+    return this.http.post<Response>(`${this.apiUrl}`, formData);
   }
 } 

@@ -3,7 +3,7 @@ main{
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    padding-top: 51px;
+    padding-top: 5rem;
   }
   
   .join{

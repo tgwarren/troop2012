@@ -44,6 +44,10 @@ input {
   cursor: pointer;
 }
 
+footer{
+  margin-left: 15px;
+}
+
 @media screen and (max-width: 800px) {
   h1{
     font-size: 40px;

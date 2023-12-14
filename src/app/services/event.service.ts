@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EventService {
-  private apiUrl = 'https://master.d7fesbo5vwopq.amplifyapp.com/events';
+  private apiUrl = 'https://master.d3b3upveiwp04g.amplifyapp.com/events';
 
   constructor(private http: HttpClient) {}
 

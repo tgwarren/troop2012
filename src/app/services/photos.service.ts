@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PhotosService {
 
-  private apiUrl = 'http://localhost:3000/upload'
+  private apiUrl = 'https://master.d7fesbo5vwopq.amplifyapp.com/upload'
 
   constructor(private http: HttpClient) {}
 

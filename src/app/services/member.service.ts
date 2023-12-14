@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class MemberService {
   
-  private apiUrl = 'http://localhost:3000/members'
+  private apiUrl = 'https://master.d7fesbo5vwopq.amplifyapp.com/members'
 
   constructor(private http: HttpClient) {}
 

@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    baseApiUrl: '',
+    baseApiUrl: 'https://master.d7fesbo5vwopq.amplifyapp.com/',
   };

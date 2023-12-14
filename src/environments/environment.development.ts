@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    baseApiUrl: 'http://localhost:8080',
+    baseApiUrl: 'https://troop2012-ce3462c4adb3.herokuapp.com/',
   };
